@@ -6,7 +6,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchPosts = () => {
-    axios.get('http://127.0.0.1:5000/reddit')
+    axios.get('https://montagne-new-posts-be.onrender.com/reddit')
       .then(res => setPosts(res.data))
       .catch(err => console.log(err));
   };
