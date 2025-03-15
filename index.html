@@ -5,9 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>r/MontagneParfums - Latest Posts</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styling for the blurred background */
+        body {
+            background: url('bg-img.jpeg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        
+        /* add gray blur on image */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+    </style>
 </head>
 <body class="bg-gray-100 min-h-screen p-6">
-
+<div class="fixed bottom-0 left-0 p-4 text-white text-sm">
+    Photo by <a href="https://www.montagneparfums.com/" target="_blank" class="underline">Montagne Parfumes</a>
+</div>
     <div class="max-w-2xl mx-auto">
         <h1 class="text-3xl font-bold mb-6 text-center">r/MontagneParfums - New Posts</h1>
         <div id="posts-container" class="space-y-4">
@@ -50,6 +71,7 @@
                             ${post.title}
                         </a>
                         <p class="text-gray-500 text-sm mt-1">Posted by u/${post.author}</p>
+                        <p class="text-gray-500 text-sm mt-1">💬 ${post.comments} Comments</p>
                     </div>
                 `;
 
